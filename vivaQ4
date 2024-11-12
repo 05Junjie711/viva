@@ -1,0 +1,46 @@
+package vivaq4;
+import java.util.Scanner;
+public class VivaQ4 {
+    public static void main(String[] args) {
+    //create a scanner
+    Scanner sc = new Scanner(System.in);
+    //Prompt the user to enter a positive integer
+    System.out.print("Please enter a positive integer: ");
+    int integer;//declare the variable to hold the user's input
+    //Loop to ensure the input is valid positive integer 
+    while(true){
+        //check if the user entered an integer
+        if(sc.hasNextInt()){
+            integer= sc.nextInt();//Read the integer input
+            //Check if the integer is greater than 0
+            if(integer>0)
+                break;//break the loop when the integer is more than 0
+            else
+                System.out.print("Invalid input. Please re-input a valid positive integer: ");
+                 
+        }
+        //Prompt the user again if the input is not an integer
+        else{
+            System.out.print("invalid input. Please re-input a valid positive integer: ");
+          sc.next(); //to clear the invalid input
+        }
+        
+    }
+    //Print confrimation that the input is valid
+    System.out.println("you've inputed a valid integer!");
+    //Check if the integer is even or odd by calling the OddorEveninteger method
+    if(OddorEvenInteger(integer)==true)
+        System.out.println("The integer is even!");
+    else
+        System.out.println("The integer is odd!");
+}
+    //Method to check if the input integer is even or odd
+    public static boolean OddorEvenInteger(int integer)
+    {
+        if(integer%2==0)
+            return true;
+        else
+            return false;
+                    
+    }
+}
